@@ -2,6 +2,8 @@
 default_border pixel 3
 default_floating_border pixel 3
 gaps inner 9
+blur enable
+blur_radius 8
 
 # class          border  backgr. text    flag    child_border
 client.focused   #6C71C4 #6C71C4 #FDF6E3 #6C71C4 #6C71C4
@@ -23,26 +25,20 @@ exec /usr/bin/gentoo-pipewire-launcher &
 ### key bindings 
 # applications
 
-bindsym $mod+q kill
-bindsym $mod+t exec      st
-bindsym $mod+f exec      firefox-bin
-bindsym $mod+r exec      wofi
-bindsym $mod+p exec      grim -g "$(slurp)" - | wl-copy
+bindsym $mod+q       kill
+bindsym $mod+t       exec alacritty
+bindsym $mod+f       exec firefox-bin
+bindsym $mod+r       exec wofi
+bindsym $mod+p       exec grim -g "$(slurp)" - | wl-copy
 bindsym $mod+Shift+p exec grim -g "$(slurp)"
-bindsym $mod+Escape  exec gtklock -d
 
 # audio
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute        exec pactl set-sink-mute   @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute        exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 bindsym XF86AudioPlay        exec playerctl play-pause
 bindsym XF86AudioNext        exec playerctl next
 bindsym XF86AudioPrev        exec playerctl previous
-
-# warpd
-bindsym $mod+z exec warpd --hint
-bindsym $mod+x exec warpd --normal
-bindsym $mod+c exec warpd --grid
 
 # reload configuration file
 bindsym $mod+Shift+c reload
@@ -70,6 +66,7 @@ bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
 bindsym $mod+4 workspace number 4
 bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
 
 # move focused window to workspace
 bindsym $mod+Shift+1 move container to workspace number 1
@@ -77,6 +74,7 @@ bindsym $mod+Shift+2 move container to workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3
 bindsym $mod+Shift+4 move container to workspace number 4
 bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
 
 # change whether windows open horizontally or
 # vertically to currently open windows, respectively

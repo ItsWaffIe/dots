@@ -3,7 +3,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require("lspconfig")
-local servers = { "pylsp", "clangd", "cssls", "rust_analyzer", "texlab" }
+local servers = { "pylsp", "clangd", "cssls", "tinymist" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({

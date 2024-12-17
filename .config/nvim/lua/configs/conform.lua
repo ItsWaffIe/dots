@@ -7,6 +7,8 @@ local options = {
 		c = { "clang-format" },
 		css = { "prettier" },
 		html = { "prettier" },
+		json = { "prettier" },
+		typ = { "typstfmt" },
 	},
 	format_on_save = {
 		timeout_ms = 500,

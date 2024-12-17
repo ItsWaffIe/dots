@@ -31,7 +31,7 @@
     "custom/media": {
         "escape": true,
         "exec": "~/.config/scripts/mediaplayer.py 2> /dev/null",
-        "format": "{icon} {}",
+        "format": "{0} {1}",
         "max-length": 40,
         "on-click": "playerctl play-pause",
         "on-scroll-down": "playerctl next",

@@ -27,15 +27,12 @@ return {
 				"bash",
 				"html",
 				"markdown",
-				"scala",
+				"typst",
 			},
 		},
 	},
 	{
-		"lervag/vimtex",
+		"xiyaowong/transparent.nvim",
 		lazy = false,
-		config = function()
-			require("configs.vimtex")
-		end,
 	},
 }
